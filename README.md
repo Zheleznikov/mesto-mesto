@@ -1,4 +1,4 @@
-![Image alt](https://github.com/Zheleznikov/mesto-webpack/blob/master/src/images/avatar-git.jpg)
+![Image alt](https://github.com/Zheleznikov/mesto-mesto/blob/master/src/images/avatar-git.jpg)
 ## Mesto
 ### Общая информация для получения радости от пользования проектом
 
