@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  <link rel="icon" href="<%=require('./images/avatar-git.jpg')%>">
+</head>
+
+<body>
+  <div class="root" id="root">
+    <header class="header root__section" >
+
+      <img src="<%=require('./images/logo.svg')%>" alt="mesto logo" class="logo">
+      <div class="header__buttons">
+        <button class="button header__button header__button_entry">Sign in</button>
+        <button class="button header__button header__button_reg">Sign up</button>
+        <button class="button header__button header__button_exit">Log out</button>
+      </div>
+      <button class="button header__button_author">i</button>
+    </header>
+    <div class="profile root__section" id="profile">
+      <div class="user-info">
+        <div class="user-info__photo"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+
+          <div class="user-info__buttons">
+            <button class="button user-info__add">Edit</button>
+            <button class="button user-info__get">Active people</button>
+          </div>
+
+        </div>
+        <button class="button user-info__button">+</button>
+      </div>
+    </div>
+
+    <div class="spinner spinner__root"><i></i></div>
+    <button class="button places-list__button"><a class="link-root" href="#root">&#8593;</a></button>
+    <div class="places-list root__section">
+      <!-- вставляем сюда карточки -->
+    </div>
+
+   
+    <!-- ПОПАПЫ ВНУТРИ БЛОКА ROOT -->
+
+
+    <!-- попап ИНФО ОБ АВТОРЕ -->
+    <div class="popup popup-author">
+      <div class="popup__content">
+        <h3 class="popup__title">О проекте</h3>
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close popup-reg__close">
+        <p class="popup__text">Развитие учебного проекта "Место" в <a href="http://praktikum.yandex.ru/" target="_blank">Яндекс.Практикуме</a> - интерактивной страницы, куда можно добавлять фотографии, удалять их и ставить лайки :)</p>
+        <p class="popup__text popup__text_sign">Используемые технологии: HTML, CSS, JavaScript, NodeJs, Express, Mongo;</p>
+        <p class="popup__text popup__text_sign">Разработка: Сергей Железников;</p>
+        <p class="popup__text popup__text_sign">Исходный код: <a href="https://github.com/Zheleznikov/mesto-webpack/tree/master2" target="_blank">фронтенд</a>, <a href="https://github.com/Zheleznikov/ya15sprint/tree/master2" target="_blank">бэкенд</a>;</p>
+        <button type="submit" class="button popup__button popup__button_active popup-author__button">Начать пользоваться</button>
+      </div>
+    </div>
+
+    <!-- папоп ДОБАВИТЬ КАРТОЧКУ -->
+    <div class="popup popup-add-card">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close popup-add-card__close">
+        <h3 class="popup__title">Новое место</h3>
+        <div class="spinner"><i></i></div>
+        <form class="popup__form" name="new">
+          <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" required maxlength="30" minlength="2">
+          <p class="popup__input-first-error-message">&ensp;</p>
+          <input type="url" name="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку">
+          <p class="popup__input-second-error-message">&ensp;</p>
+          <button type="submit" class="button popup__button popup-add-card__button" disabled>+</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- попап ВОЙТИ -->
+    <div class="popup popup-entry">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close popup-reg__close">
+        <h3 class="popup__title_add">Войти</h3>
+        <div class="spinner"><i></i></div>
+        <form class="popup__form" name="entry">
+          <input type="email" name="entry-email" class="popup__input popup__input-email" placeholder="Введите email" required maxlength="30" minlength="2">
+          <p class="popup__input-first-error-message">&ensp;</p>
+          <input type="password" name="entry-password" class="popup__input popup__input-password" placeholder="Введите пароль">
+          <p class="popup__input-second-error-message">&ensp;</p>
+          <button type="submit" class="button popup__button popup-entry__button" disabled>Войти</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- попап РЕГИСТРАЦИЯ -->
+    <div class="popup popup-reg">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close popup-reg__close">
+        <h3 class="popup__title">Зарегистрироваться</h3>
+        <div class="spinner"><i></i></div>
+        <form class="popup__form" name="formReg">
+          <input type="text" name="regName" class="popup__input popup__input_name" placeholder="Как Вас зовут?" required maxlength="30" minlength="2">
+          <p class="popup__input-first-error-message">&ensp;</p>
+          <input type="text" name="regAbout" class="popup__input popup__input_about" placeholder="Напишите немного о себе">
+          <p class="popup__input-second-error-message">&ensp;</p>
+          <input type="text" name="regAvatar" class="popup__input popup__input_avatar" placeholder="Прикрепите ссылку на аватарку">
+          <p class="popup__input-third-error-message">&ensp;</p>
+          <input type="text" name="regEmail" class="popup__input popup__input_email" placeholder="Введите email">
+          <p class="popup__input-fourth-error-message">&ensp;</p>
+          <input type="password" name="regPassword" class="popup__input popup__input_password" placeholder="Введите пароль из латинских символов и цифр">
+          <!-- <img src="<%=require('./images/showPass.png')%>" alt="" class=""> -->
+          <p class="popup__input-fifth-error-message">&ensp;</p>
+          <input type="password" name="regConfimPassword" class="popup__input popup__input_confirm-password" placeholder="Подтвердите пароль">
+          <p class="popup__input-sixth-error-message">&ensp;</p>
+          <button type="submit" class="button popup__button popup-reg__button" disabled>Зарегистрироваться</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- попап ПОМЕНЯТЬ ИНФУ -->
+    <div class="popup popup-add-user-info">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close popup-add-user-info__close">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <div class="spinner"><i></i></div>
+        <form novalidate class="popup__form" name="newUserAdd">
+          <input type="text" name="nameUserAdd" class="popup__input popup__input_type_name" placeholder="Имя" required>
+          <p class="popup__input-first-error-message">&ensp;</p>
+          <input type="text" name="jobUserAdd" class="popup__input popup__input_type_job" placeholder="О себе" required>
+          <p class="popup__input-second-error-message">&ensp;</p>
+          <button type="submit" class="button popup__button popup__button_active popup-add-user-info__button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- попап ПОМЕНЯТЬ АВАТАР -->
+    <div class="popup popup-user-avatar">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close popup-user-avatar__close">
+        <h3 class="popup__title">Обновить аватар</h3>
+        <div class="spinner"><i></i></div>
+        <form novalidate class="popup__form" name="AvatarUserAdd">
+          <input type="text" name="LinkUserAdd" class="popup__input popup__input_type_name" placeholder="Ссылка на аватар" required>
+          <p class="popup__input-first-error-message">&ensp;</p>
+          <button type="submit" class="button popup__button  popup-add-avatar__button" disabled>Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- попап - КАРТОЧКА НА ВЕСЬ ЭКРАН-->
+    <div class="popup place-popup">
+      <div class="place-popup__picture">
+        <div class="place-popup__author-logo"></div>
+        <p class="place-popup__author-name">Алло</p>
+        <img src="" alt="" class='place-popup__new-image'>
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close place-popup__close">
+      </div>
+    </div>
+
+    <!-- попап АКТИВНЫЕ ПОЛЬЗОВАТЕЛИ -->
+    <div class="popup popup-user-list">
+      <div class="popup__content popup-user-list__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close popup-user-avatar__close">
+        <div class="spinner"><i></i></div>
+        <div class="popup-user-list__all-list">
+          <!-- сюда кладем пользователей -->
+        </div>
+      </div>
+    </div>
+
+    <!-- блока с информацией о другом пользователе ДЛЯ ПОПАПА АКТИВНЫЕ ПОЛЬЗОВАТЕЛИ-->
+    <template class="users-list-template">
+      <div class="popup-user-list__user-info">
+          <div class="popup-user-list__photo"></div>
+          <div class="popup-user-list__data">
+              <h1 class="popup-user-list__name"></h1>
+              <p class="popup-user-list__job"></p>
+              <p class="popup-user-list__counter"></p>
+          </div>
+      </div>
+    </template>
+
+    <!-- верстка карточки -->
+    <template class="card-template">
+      <div class="place-card">
+        <div class="place-card__image">
+          <button class="place-card__delete-icon"></button>
+          <p class="place-card__author">Автор</p>
+        </div>
+        <div class="place-card__description">
+          <h3 class="place-card__name"></h3>
+          <button class="place-card__like-icon"></button>
+          <p class="place-card__like-counter"></p>
+        </div>
+      </div>
+    </template>
+
+
+
+  </div>
+  <!-- конец блока root -->
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+
+</html>

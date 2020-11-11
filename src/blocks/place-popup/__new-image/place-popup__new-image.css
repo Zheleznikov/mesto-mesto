@@ -1,0 +1,5 @@
+.place-popup__new-image {
+  max-height: 80vh;
+  max-width: 80vw;
+  object-fit: cover;
+}

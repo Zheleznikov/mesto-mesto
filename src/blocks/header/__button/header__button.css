@@ -1,0 +1,28 @@
+.header__button {
+  border-radius: 5px;
+  display: none;
+}
+
+.header__button_entry {
+  margin-right: 15px;
+}
+
+.header__button_exit {
+  /* margin-right: 15px; */
+  /* да как такое вообще возможно?? что это свойство не работает */
+  margin-left: 15px;
+}
+
+.header__button_author {
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

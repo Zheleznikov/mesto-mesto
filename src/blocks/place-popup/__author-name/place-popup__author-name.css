@@ -1,0 +1,8 @@
+.place-popup__author-name {
+    position: absolute;
+    top: -55px;
+    left: 50px;
+    color: white;
+    line-height: 26px;
+    font-size: 20px;
+}

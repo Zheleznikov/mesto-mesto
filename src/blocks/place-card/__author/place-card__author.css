@@ -1,0 +1,15 @@
+.place-card__author {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    color: white;
+    display: none;
+}
+
+.place-card__image:hover .place-card__author {
+    display: inline;
+    
+}

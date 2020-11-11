@@ -1,0 +1,12 @@
+@import url(./__new-image/place-popup__new-image.css);
+@import url(./__picture/place-popup__picture.css);
+@import url(./__author-logo/place-popup__author-logo.css);
+@import url(./__author-name/place-popup__author-name.css);
+.place-popup {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+   
+}

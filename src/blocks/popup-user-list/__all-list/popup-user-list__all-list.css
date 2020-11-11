@@ -1,0 +1,7 @@
+.popup-user-list__all-list {
+    /* border: 1px solid green; */
+    overflow: auto;
+    height: 72vh;
+    
+    /* width: 90%; */
+}

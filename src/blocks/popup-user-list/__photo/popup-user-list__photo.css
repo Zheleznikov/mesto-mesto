@@ -1,0 +1,17 @@
+.popup-user-list__photo {
+  width: 110px;
+  height: 110px;
+  min-width: 110px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  /* background-image: url(https://sun9-9.userapi.com/c856028/v856028937/181318/SO4y6hL8FAU.jpg); */
+ 
+}
+
+
+@media screen and (max-width: 980px) {
+  .popup-user-list__photo {
+    margin-top: 40px;
+  }
+}

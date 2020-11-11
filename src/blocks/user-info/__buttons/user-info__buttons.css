@@ -1,0 +1,11 @@
+.user-info__buttons {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+@media screen and (max-width: 980px) {
+    .user-info__buttons {
+        /* flex-direction: column; */
+    }
+}

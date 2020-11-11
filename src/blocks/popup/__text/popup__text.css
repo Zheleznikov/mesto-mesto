@@ -1,0 +1,11 @@
+.popup__text {
+  line-height: 20px;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.popup__text_sign {
+  /* text-align: end; */
+  margin: 10px 0 0 0;
+  /* padding: 0; */
+}

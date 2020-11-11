@@ -1,0 +1,17 @@
+.places-list__button {
+  /* display: inline; */
+  position: fixed;
+  border-radius: 50%;
+  bottom: 25px; 
+  right: 25px;
+  font-size: 20px;
+  visibility: hidden;
+  z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .places-list__button {
+    bottom: 5px; 
+    right: 5px;
+  }
+}

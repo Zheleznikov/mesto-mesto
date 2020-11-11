@@ -1,0 +1,11 @@
+@import url(./__all-list/popup-user-list__all-list.css);
+@import url(./__data/popup-user-list__data.css);
+@import url(./__job/popup-user-list__job.css);
+@import url(./__name/popup-user-list__name.css);
+@import url(./__photo/popup-user-list__photo.css);
+@import url(./__user-info/popup-user-list__user-info.css);
+@import url(./__content/popup-user-list__content.css);
+@import url(./__counter/popup-user-list__counter.css);
+.popup-user-list {
+    font-size: 30px;
+}
