@@ -85,7 +85,7 @@ export default class Api {
         }
       })
       .catch((err) => console.log(err))
-      .finally(() => console.log('Пробовали загрузить карточки и дошли до сюда '));
+      // .finally(() => console.log('Пробовали загрузить карточки и дошли до сюда '));
   }
 
 
